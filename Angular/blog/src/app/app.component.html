@@ -1,2 +1,59 @@
 <h1>Hello World!! - First Project of {{title}}.</h1>
 <h1>{{getValue()}}</h1>
+
+Create component:===
+<!-- commend:- ng generate component sub-category-list -->
+<app-login-comp></app-login-comp>
+<!-- If you want to change selector name.
+    step1:- go to complonent then goto component_name.component.ts file.
+    step2:- then change Component -> selector value as you want to name.
+-->
+
+<br>
+Create component with inline style:===
+<!-- commend:- ng generate component sub-category-list --inline-style -->
+<app-user-list></app-user-list>
+
+<br>
+Create component with inline template:===
+<!-- commend:- ng generate component sub-category-list --inline-template -->
+<app-category-list></app-category-list>
+
+<br>
+Create component with inline style and inline template:===
+<!-- commend:- ng generate component sub-category-list --inline-template --inline-style -->
+ <app-sub-category-list></app-sub-category-list>
+ 
+<br>
+Here import module component:===
+<app-registrar></app-registrar>
+
+
+<br>
+On button click call function:===
+<button (click)="getName('anguler learning!', 'Learn function!')">Click me</button>
+
+<br>
+Keyup example:-<br>
+<input type="text" #box (keyup)="getData(box.value)" placeholder="event keyup.">
+
+<br>
+Keydown example:-<br>
+<input type="text" #box1 (keydown)="getKeydownData(box1.value)" placeholder="event keydown.">
+
+<br>
+blur example:-<br>
+<input type="text" #box2 (blur)="getblurData(box2.value)" placeholder="event blur.">
+
+<br>
+input example:-<br>
+<input type="text" #box3 (input)="getinputData(box3.value)" placeholder="event input.">
+
+
+<br>
+On mouseover:-<br>
+<h3 (mouseover)="getGetData('over')">Mouse Over</h3>
+
+<br>
+On mouseleave:-<br>
+<h3 (mouseleave)="getGetData('leave')">Mouse Over</h3>
