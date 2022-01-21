@@ -57,3 +57,25 @@ On mouseover:-<br>
 <br>
 On mouseleave:-<br>
 <h3 (mouseleave)="getGetData('leave')">Mouse Over</h3>
+
+<br>
+Get Input Box Value and Display:-<br>
+<input type="text" #name (input)="getNameValue(name.value)" placeholder="Get Input Box Value and Display." name="name">
+<p>Box value is:- {{displayValInBox}}</p>
+
+<br>
+On Button Click show box value:-<br>
+<input type="text" #name1 placeholder="Get Input Box Value and Display." name="name1">
+<button (click)="getNameValue1(name1.value)">Click me</button>
+<p>Box value is:- {{displayValInBox1}}</p>
+
+
+<br>
+Counter example:- <br>
+<button (click)="counter('minus')"> - </button>
+<p>{{count}}</p>
+<button (click)="counter('plus')"> + </button>
+
+<br>
+<h1>Property binding.</h1>
+<app-property-binding></app-property-binding>

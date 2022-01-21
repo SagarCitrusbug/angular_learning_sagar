@@ -8,7 +8,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { SubCategoryListComponent } from './sub-category-list/sub-category-list.component';
 
 // import module.
-import {UserAuthModule} from './user-auth/user-auth.module'
+import {UserAuthModule} from './user-auth/user-auth.module';
+import { PropertyBindingComponent } from './property-binding/property-binding.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {UserAuthModule} from './user-auth/user-auth.module'
     LoginComponent,
     UserListComponent,
     CategoryListComponent,
-    SubCategoryListComponent
+    SubCategoryListComponent,
+    PropertyBindingComponent
   ],
   imports: [
     BrowserModule,

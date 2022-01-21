@@ -1,0 +1,54 @@
+<!-- Date:- 21/01/2022 -->
+
+<h1>{{ title }}</h1>
+<h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+<ng-template #ifBlock>
+  <p>If Condition work.</p>
+</ng-template>
+
+<ng-template #elseBlock>
+  <p>Else Condition work.</p>
+</ng-template>
+
+<br>
+<h2>Multiple condition or else if:--</h2>
+<ng-template [ngIf]="color==='red'">
+  <p style="color: red;">Red Color.</p>
+</ng-template>
+<ng-template [ngIf]="color==='green'">
+  <p style="color: green;">Green Color.</p>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+  <p style="color: blue;">Green Color.</p>
+</ng-template>
+
+<br>
+<h2>Switch case:--</h2>
+<div [ngSwitch]="switchColor">
+  <p *ngSwitchCase="'red'" style="color: red;">Red color.</p>
+  <p *ngSwitchCase="'green'" style="color: green;">Green color.</p>
+  <p *ngSwitchCase="'yellow'" style="color: yellow;">Yellow color.</p>
+  <p *ngSwitchCase="'blue'" style="color: blue;">Blue color.</p>
+  <p *ngSwitchCase="'gray'" style="color: gray;">Gray color.</p>
+  <p *ngSwitchCase="'blueviolet'" style="color: blueviolet;">BlueViolet color.</p>
+  <p *ngSwitchCase="'burlywood'" style="color: burlywood;">Burlywood color.</p>
+  <p *ngSwitchDefault>Unknown color.</p>
+</div>
+
+<br>
+<h1>For Loop:</h1>
+<h3>Normal For Loop:--</h3>
+<p *ngFor='let item of users'>Name of: {{ item }}</p>
+
+<br>
+<h3>Make Array of Object && Apply Loop on Object's Array:--</h3>
+<p *ngFor='let item of usersDetails'>{{ item.name }} -- {{ item.email }} -- {{ item.phone }}</p>
+
+<br>
+<h1> Nested Loop:</h1>
+<ul *ngFor='let user of usersDetails'>
+    <li>{{user.name}} -- {{user.email}}</li>
+    <ul *ngFor='let social of user.socialAccount'>
+        <li>{{ social }}</li>
+    </ul>
+</ul>

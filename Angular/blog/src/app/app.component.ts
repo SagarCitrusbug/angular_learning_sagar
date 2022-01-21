@@ -34,5 +34,21 @@ export class AppComponent {
   getGetData(val:string){
     console.log(val)
   }
+  displayValInBox=''; // if you want to define type of varable then use Variable_name:type(string,int,etc.)
+  getNameValue(val:string){
+    console.warn(val)
+    this.displayValInBox = val
+  }
 
+  displayValInBox1=''; // if you want to define type of varable then use Variable_name:type(string,int,etc.)
+  getNameValue1(val:string){
+    console.warn(val)
+    this.displayValInBox1 = val
+  }
+
+  count = 0;
+  counter(type:string){
+    type==='plus' ?this.count++:this.count--;
+
+  }
 }

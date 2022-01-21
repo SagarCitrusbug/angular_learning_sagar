@@ -1,0 +1,7 @@
+<p>property-binding works!</p>
+
+<!-- in firast input box use inerpolution for dynamic value show. here interpolution not check type but count int/string-->
+<input type="text" name="user-name" value={{name}} disabled={{disable}}>
+<br/><br/>
+<!-- in second input box use property binding for dynamic value show. -->
+<input type="text" name="user-name" [value]=name [disabled]=disable>
