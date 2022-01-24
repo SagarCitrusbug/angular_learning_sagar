@@ -1,5 +1,7 @@
 <!-- Date:- 21/01/2022 -->
 
+<app-header></app-header>
+
 <h1>{{ title }}</h1>
 <h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
 <ng-template #ifBlock>
@@ -52,3 +54,80 @@
         <li>{{ social }}</li>
     </ul>
 </ul>
+
+<br>
+<h1>Style Binding | Dynamic Style</h1>
+<p [style.color]="fontcolor" [style.background]="bgColor">Dynamic Color.</p>
+<button (click)='updateColor()'>Update color</button>
+
+<br>
+<h1>Basic Form</h1>
+<form #basicFrom='ngForm' (ngSubmit)='getData(basicFrom.value)'>
+  <input type="text" ngModel name="name" placeholder="Enter user name."/>
+  <br/><br/>
+  <input type="text" ngModel name="email" placeholder="Enter user email."/>
+  <br/><br/>
+  <input type="password" ngModel name="password" placeholder="Enter password."/>
+  <br/><br/>
+  <button>Registrar</button>
+</form>
+
+<ul>
+  <li>Name = {{userData.name}}</li>
+  <li>Email = {{userData.email}}</li>
+  <li>Password = {{userData.password}}</li>
+</ul>
+
+<br>
+<h1>Toggle Element | hide and show tag</h1>
+<button (click)="toggle()">toggle</button>
+
+<div *ngIf="tgValue">
+  <h3>Hide/show using Toggle button.</h3>
+</div>
+
+<br>
+<h1>how to use Bootstrap with angular</h1>
+<p>
+  <ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+</p>
+
+<br>
+<h1>Example 2:</h1>
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+  <ngb-panel id="static-1" title="Simple">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+      labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="static-2">
+    <ng-template ngbPanelTitle>
+      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+      labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="static-3" title="Disabled" [disabled]="true">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+      labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

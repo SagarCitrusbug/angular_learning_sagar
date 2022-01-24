@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -25,4 +26,27 @@ export class AppComponent {
     {'name': 'Peter', 'email': 'Peter@gmail.com', 'phone':'4444', 'socialAccount': ['yahoo', 'linkedin', 'twitter']},
     {'name': 'Burce', 'email': 'Burce@gmail.com', 'phone':'3333', 'socialAccount': ['twitter', 'google', 'instagram']},
   ]
+  // Style Binding | Dynamic Style
+  fontcolor='red';
+  bgColor='yellow';
+  
+  updateColor(){ 
+    this.fontcolor = 'blue';
+    this.bgColor = 'green';
+  }
+  
+  // Basic Form
+  userData:any = {};
+  getData(data:NgForm){
+    console.log(data)
+    this.userData=data;
+  }
+
+  // Toggle Element | hide and show tag
+  tgValue=true;
+  toggle(){
+    this.tgValue=!this.tgValue
+  }
+
+  
 }
