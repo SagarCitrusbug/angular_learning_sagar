@@ -48,5 +48,29 @@ export class AppComponent {
     this.tgValue=!this.tgValue
   }
 
-  
+  // Todo list.
+  todo:any[] = []
+  addTask(data:string){
+    this.todo.push({id:this.todo.length, name:data});
+  }
+
+  romoveTask(id:number){
+   this.todo=this.todo.filter(item=>item.id!==id)
+   console.log(this.todo)
+  }
+
+  // Pass Data child to component
+  childData = 10
+  updateValue(){
+    this.childData = Math.floor(Math.random()*100)
+  }
+
+  // Send data child to parent component
+  childData1 = "";
+  updateChild(item:string){
+    this.childData1=item
+  }
+
+
+
 }

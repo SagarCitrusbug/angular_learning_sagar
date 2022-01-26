@@ -131,3 +131,51 @@
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
+
+<h1>Material UI in Angular </h1>
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+
+<div class="example-button-row">
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+</div>
+
+<p>
+  Button with a badge on the left
+  <button mat-raised-button color="primary"
+      matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+    Action
+  </button>
+</p>
+
+
+<br/>
+<h1>Todo list in angular</h1>
+<input type="text"  placeholder="Enter task." #task />
+<br/>
+<button (click)='addTask(task.value)'> Add Todo</button>
+
+
+<ul *ngFor='let items of todo'>
+  <li>{{items.name}} <button (click)='romoveTask(items.id)'>Remove Task</button></li>
+</ul>
+
+<br/>
+<h1>Pass Data child to component:-</h1>
+<app-child [item]="childData"></app-child>
+<button (click)='updateValue()'>Update value</button>
+
+<div *ngFor='let user of usersDetails'>
+  <app-child [user]="user"></app-child>
+</div>
+
+<br/>
+<h1>Send data child to parent component</h1>
+<app-child-to-parent (updateDataEvent)= updateChild($event)></app-child-to-parent>
+<p> Text box value:---{{childData1}} </p>
+

@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+
+
+<br/>
+<h1>Two way binding</h1>
+<input type="text" [(ngModel)]="name">
+<p>Above box value:- {{name}}</p>
+
+
+<br/>
+<h1>Template Reference Variable</h1>
+<input type="text" #box>
+<button (click)='templateRef(box)'>Click me</button>
+<!-- if you pass input value and you are difine 'HTMLInputElement' thate time got error like below.-->
+<!-- error TS2345: Argument of type 'string' is not assignable to parameter of type 'HTMLInputElement'. -->
