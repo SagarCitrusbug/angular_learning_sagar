@@ -2,14 +2,65 @@
 
 
 <br/>
-<h1>Two way binding</h1>
+<h1>Two way binding:-</h1>
 <input type="text" [(ngModel)]="name">
 <p>Above box value:- {{name}}</p>
 
 
 <br/>
-<h1>Template Reference Variable</h1>
+<h1>Template Reference Variable:-</h1>
 <input type="text" #box>
 <button (click)='templateRef(box)'>Click me</button>
 <!-- if you pass input value and you are difine 'HTMLInputElement' thate time got error like below.-->
 <!-- error TS2345: Argument of type 'string' is not assignable to parameter of type 'HTMLInputElement'. -->
+
+<br/>
+<h1>Basic of Pipes in angular:-</h1>
+<p>{{title | uppercase}}</p>
+<p>{{title | lowercase}}</p>
+
+<h3>show only date using pipes</h3>
+<p>{{today | date}}</p>
+<!-- pipe with parameter -->
+<p>{{today | date: 'fullDate'}}</p>
+
+<h3>Advance Pipes</h3>
+<h4>Slice pipe</h4>
+<p>{{title | slice : 3:5}}</p>
+<h4>2 pipes at the same time</h4>
+<p>{{title | slice : 0:5 | uppercase}}</p>
+<h4>Json Pipes</h4>
+<p>{{jsonPipes | json}}</p>
+<h4>number pipes</h4>
+<p>{{ 2000.1234 | number: '2.2-3'}}</p>
+<h4>Currency Pipes</h4>
+<P>{{ 20 | currency:'INR' }}</P>
+
+<h3>Make custom pipes </h3>
+<li>convert usd to inr using custom pipe</li>
+<p>{{20 | usdInr: 100}}</p>]
+<br/>
+<h1>Template driven form</h1>
+<form #loginFromValue='ngForm' (ngSubmit)='loginForm(loginFromValue.value)'>
+    <input type="text" placeholder="Enter Email address" name="email" ngModel/>
+    <br/>
+    <input type="password" placeholder="Enter password" name="passwrod" ngModel/>
+    <br/>
+    <button>submit</button>
+</form>
+
+<br/>
+<h1>Reactive Form in Angular</h1>
+<form [formGroup]="userForm" (ngSubmit)='loginUser()'>
+    <input type="text" placeholder="Enter username" name="username" formControlName="username"/>
+    <span style="color: red;" *ngIf="username && username.invalid && username.touched ">this field is required or not valid</span>
+    <br/>
+    <input type="password" placeholder="Enter passsword" name="u_password" formControlName="u_password"/>
+    <span style="color: red;" *ngIf="u_password && u_password.invalid && u_password.touched ">this field is required or not valid</span>
+    <br/>
+    <button [disabled]="userForm.invalid" disabled>login</button>
+</form>
+
+<br/>
+<h1>Directives | custom | example</h1>
+<p appRefEl >Custom Directive example</p>
