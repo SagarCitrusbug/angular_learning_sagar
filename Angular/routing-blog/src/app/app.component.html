@@ -16,3 +16,15 @@
 <a routerLink='user/3'>Jaddu</a>
 
 <router-outlet></router-outlet>
+
+<hr/>
+<h1>Basic example what we service</h1>
+<ul *ngFor='let user of usersDetails'>
+    <li>{{ user.name }}</li>
+</ul>
+<h3>Service use example:</h3>
+<ul *ngFor='let user of users'>
+    <li>{{ user.name }}:{{ user.email }}</li>
+</ul>
+
+<app-footer></app-footer>

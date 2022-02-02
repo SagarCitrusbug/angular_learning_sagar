@@ -1,0 +1,29 @@
+<h1>Example of Live API Integrations.</h1>
+<h3>Post method call</h3>
+<form #userForm='ngForm' (submit)='saveUserData(userForm.value)'>
+  <input type="text" ngModel name="title" placeholder="Enter Post title."/>
+  <br/>
+  <input type="text" ngModel name="body" placeholder="Enter Post body." />
+  <br/>
+  <input type="number" ngModel name="userId" min=1 max=10 placeholder="Enter User Id"/>
+  <br/>
+  <button>Save Post</button>
+  <br/>
+</form>
+<br/>
+<hr/>
+<h3>Get Method Url Call</h3>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <tr *ngFor='let user of users'>
+      <td>{{ user.id }}</td>
+      <td>{{ user.title }}</td>
+      <td>{{ user.body }}</td>
+    </tr>
+  </tbody>
+</table>

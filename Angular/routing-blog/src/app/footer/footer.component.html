@@ -1,0 +1,12 @@
+<div class="footer">
+    <h1>Footer Of Page</h1>
+    <ul *ngFor='let user of usersDetails'>
+        <li>{{ user.email }}</li>
+    </ul>
+    <hr/>
+    <h3>Service use example:</h3>
+    <ul *ngFor='let user of users'>
+        <li>{{ user.name }}:{{ user.email }}</li>
+    </ul>
+    
+</div>
